@@ -1,4 +1,5 @@
 import { getLocations, setLocation } from "./database.js"
+const locations = getLocations()
 
 document.addEventListener(
     "change",
