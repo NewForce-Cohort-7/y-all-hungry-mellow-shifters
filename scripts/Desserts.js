@@ -1,6 +1,6 @@
-import { getDessert, setDessert} from "./database.js"
+import { getDesserts, setDessert} from "./database.js"
 
-const dessert = getDessert()
+const desserts = getDesserts()
 
 document.addEventListener(
     "change",
@@ -18,13 +18,13 @@ document.addEventListener(
 
 
 export const dessert = () => {
-    return `<h2>Dessert</h2>
-    <select id="dessert">
+    return `<h2>Desserts</h2>
+    <select id="desserts">
     <option value="0">Dessert Items</option>
     ${
         vehicle.map (
         (vehicle) => {
-            return `<option name="dessert" value="${dessert.id}">${dessert.type}</option>`
+            return `<option name="desserts" value="${dessert.id}">${dessert.type}</option>`
         }
             ).join("")
         }
