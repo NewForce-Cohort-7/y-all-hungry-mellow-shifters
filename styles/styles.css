@@ -1,6 +1,8 @@
 body {
     margin: 40px;
-  }
+    background-color: aliceblue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
   
 
   
@@ -54,5 +56,16 @@ body {
         text-align: center;
         text-decoration: none;
         width: 33%;
-        align-items: center;
+        position: 50%; 
+        margin-top: 50px;
+        margin: auto;
+        transition-duration: 0.4s;
+        border-radius: 8px;
+    }
+    #button:hover {background-color: #3e8e41}
+
+    #button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
     }
