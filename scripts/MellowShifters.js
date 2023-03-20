@@ -4,13 +4,14 @@ import { Orders } from "./orders.js"
 import { completeOrder } from "./database.js"
 import { Desserts } from "./Desserts.js"
 import { getDrinks } from "./database.js"
+import { Foods } from "./database.js"
 
 document.addEventListener(
     "click", (event) => {
     const itemClicked =event.target
     if (itemClicked.id.startsWith("button")){
 
-        completeOrder()
+        completeOrder()}
     }
 )
 
@@ -49,7 +50,7 @@ export const yallHungry = () => {
     </section>
     <section class="food_container">
         <div class="food">
-
+        ${Foods()}
         </div>
     </section>
     <section class="drink_container">

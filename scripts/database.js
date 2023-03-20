@@ -64,6 +64,15 @@ export const setDesserts = (dessertId) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
+//foods
+export const getFoods = () => {
+    return database.foods.map(food => ({...food}))
+}
+
+export const setFood = (foodId) => {
+    database.transientState.selectedLocation = foodId
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
 
 export const completeOrder = () => {
@@ -76,3 +85,5 @@ export const completeOrder = () => {
     database.transientState ={}
         document.dispatchEvent( new CustomEvent("stateChanged") )
 }
+
+
