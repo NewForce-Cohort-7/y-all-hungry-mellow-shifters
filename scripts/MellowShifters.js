@@ -1,4 +1,5 @@
 import { Locations } from "./locations.js"
+import { Drinks } from "./drinks.js"
 
 document.addEventListener(
     "click", (event) => {
@@ -34,7 +35,7 @@ export const yallHungry = () => {
     </section>
     <section class="drink_container">
         <div class="drink">
-
+        ${Drinks()}
         </div>
     </section>
     <section class="dessert_container">
