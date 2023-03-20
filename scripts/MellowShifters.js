@@ -1,21 +1,24 @@
 import { Locations } from "./locations.js"
 import { Drinks } from "./drinks.js"
+import { Orders } from "./orders.js"
+import { completeOrder } from "./database.js"
 import { Desserts } from "./Desserts.js"
 import { getDrinks } from "./database.js"
 
-
-
 document.addEventListener(
-    "click",
-    (clickEvent) => {
-        const itemClicked = clickEvent.target
-        if (itemClicked.id === "button") {
-            getDrinks()
-            console.log("we clicked it")
-        }
-        
+    "click", (event) => {
+    const itemClicked =event.target
+    if (itemClicked.id.startsWith("button")){
+
+        completeOrder()
     }
 )
+
+
+
+
+
+
 
 // document.addEventListener(
 //     "click", (event) => {
@@ -61,12 +64,13 @@ export const yallHungry = () => {
         </div>
     </section>
     <section class="ordertotal_container">
+        ${Orders()}
         <div class="ordertotal">
-
+        
         </div>
     </section>
         <section class="button_container">
-        <button class="button"></button>
+        <button id="button"></button>
     </section>
 </article>
 `
