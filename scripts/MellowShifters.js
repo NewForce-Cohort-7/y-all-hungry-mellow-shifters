@@ -3,6 +3,7 @@ import { Drinks } from "./drinks.js"
 import { Orders } from "./orders.js"
 import { completeOrder } from "./database.js"
 import { Desserts } from "./Desserts.js"
+import { Foods } from "./Foods.js"
 import { getDrinks } from "./database.js"
 import { Foods } from "./Foods.js"
 
@@ -14,12 +15,6 @@ document.addEventListener(
         completeOrder()}
     }
 )
-
-
-
-
-
-
 
 // document.addEventListener(
 //     "click", (event) => {
@@ -37,42 +32,31 @@ export const yallHungry = () => {
 
 <h1>Y'ALL HUNGRY?</h1>
 
-<article class="order_container"
+    <article class="container"
 
-    <section class="location_container">
-        <div class="location">
+    <section class="location">
         ${Locations()}
     </section>
-    <section class="createorder_container">
-        <div class="createorder">
 
-        </div>
+    <section class="createorder">
     </section>
-    <section class="food_container">
-        <div class="food">
+    <section class="food">
         ${Foods()}
-        </div>
+      
     </section>
-    <section class="drink_container">
-        <div class="drinks">
+    <section class="drink">
         ${Drinks()}
-        </div>
     </section>
-    <section class="dessert_container">
-        <div class="desserts">
+    <section class="dessert">
         ${Desserts()}
 
-        </div>
     </section>
-    <section class="ordertotal_container">
+    <section class="ordertotal">
         ${Orders()}
-        <div class="ordertotal">
-        
-        </div>
-    </section>
-        <section class="button_container">
-        <button id="button"></button>
-    </section>
+      </section>
+   
+    <button id="button">Place Your Order</button>
+
 </article>
 `
 }
