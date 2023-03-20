@@ -1,12 +1,14 @@
 import { Locations } from "./locations.js"
 import { Drinks } from "./drinks.js"
+import { Orders } from "./orders.js"
+import { completeOrder } from "./database.js"
 
 document.addEventListener(
     "click", (event) => {
     const itemClicked =event.target
-    if (itemClicked.class.startsWith("button")){
+    if (itemClicked.id.startsWith("button")){
 
-        // Call the function responsible for generating order here
+        completeOrder()
         }
     }
 )
@@ -44,12 +46,13 @@ export const yallHungry = () => {
         </div>
     </section>
     <section class="ordertotal_container">
+        ${Orders()}
         <div class="ordertotal">
-
+        
         </div>
     </section>
         <section class="button_container">
-        <button class="button"></button>
+        <button id="button"></button>
     </section>
 </article>
 `
