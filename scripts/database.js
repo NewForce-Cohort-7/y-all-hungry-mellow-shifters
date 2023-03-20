@@ -57,7 +57,7 @@ export const completeOrder = () => {
 }
 
 
-export const getFood = () => {
+export const getFoods = () => {
     return database.foods.map(food => ({...food}))
 }
 

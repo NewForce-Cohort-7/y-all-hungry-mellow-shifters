@@ -1,6 +1,6 @@
-import {getFood, setFood} from "./database"
+import {getFoods, setFood} from "./database.js"
 
-const foods = getFood()
+const foods = getFoods()
 
 document.addEventListener(
     "change",
@@ -12,13 +12,13 @@ document.addEventListener(
 )
 
 export const Foods = () => {
-    let html = "<h2>Foods</h2>"
+    let html = "<h2>Food</h2>"
 
     html += '<select id="foods">'
-    html += '<option value="0">Select foods</option>'
+    html += '<option value="0">Select food</option>'
 
     for (const food of foods) {
-        html += `<option value="${foods.id}">${foods.name}</option>`
+        html += `<option value="${food.id}">${food.name}</option>`
     }
 
     html += "</select>"
