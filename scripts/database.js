@@ -27,7 +27,14 @@ const database = {
         {id:2, name: "Fred's", address: "99 Central Ave." }, 
         {id:3, name: "Food Factory", address: "129 Parkside Dr." }, 
         {id:4, name: "Riverside Grille", address:"89 Riverside Way"}
+    ],
+    customOrder: [
+        {id:1,locationId:1,drinkId:1,dessertId:1,foodId:1,timestamp:1614659931693}
     ]
+}
+
+export const getOrders = () => {
+    return database.customOrder.map(customOrder =>({...customOrder}))
 }
 //locations
 export const getLocations = () => {
@@ -57,16 +64,7 @@ export const setDesserts = (dessertId) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
-
-
-export const completeOrder = () => {
-
-        // Broadcast custom event to entire documement so that the
-        // application can re-render and update state
-        document.dispatchEvent( new CustomEvent("stateChanged") )
-}
-
-
+//foods
 export const getFoods = () => {
     return database.foods.map(food => ({...food}))
 }
@@ -75,3 +73,17 @@ export const setFood = (foodId) => {
     database.transientState.selectedLocation = foodId
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
+
+
+export const completeOrder = () => {
+
+    const newOrder = {...database.transientState}
+    const lastIndex = database.customOrder.length - 1
+    newOrder.id = database.customOrder[lastIndex].id + 1
+    newOrder.timestamp=Date.now()
+    database.customOrder.push(newOrder)
+    database.transientState ={}
+        document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
+

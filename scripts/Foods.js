@@ -24,13 +24,4 @@ export const Foods = () => {
     html += "</select>"
     return html
 
-
-    // const arrayOfOptions = foods.map( (food) => {
-    //         return `<option value="${food.id}">${food.name}</option>`
-    //     }
-    // )
-
-    // html += arrayOfOptions.join("")
-    // html += "</select>"
-    // return html
 }
