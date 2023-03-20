@@ -46,3 +46,13 @@ export const completeOrder = () => {
         // application can re-render and update state
         document.dispatchEvent( new CustomEvent("stateChanged") )
 }
+
+
+export const getFood = () => {
+    return database.foods.map(food => ({...food}))
+}
+
+export const setFood = (foodId) => {
+    database.transientState.selectedLocation = foodId
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
