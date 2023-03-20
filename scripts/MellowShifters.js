@@ -39,6 +39,7 @@ export const yallHungry = () => {
     </section>
     <section class="dessert_container">
         <div class="dessert">
+        ${Desserts()}
 
         </div>
     </section>

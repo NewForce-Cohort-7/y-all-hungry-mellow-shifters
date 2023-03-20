@@ -20,7 +20,7 @@ document.addEventListener(
 export const Desserts = () => {
     return `<h2>Desserts</h2>
     <select id="desserts">
-    <option value="0">Dessert Items</option>
+    <option value="0">Select your Dessert</option>
     ${
         desserts.map (
         (dessert) => {
