@@ -1,14 +1,7 @@
 import { Locations } from "./locations.js"
 import { Drinks } from "./drinks.js"
-<<<<<<< HEAD
 import { Foods } from "./Foods.js"
 import {  Desserts } from "./Desserts.js"
-=======
-import { Desserts } from "./Desserts.js"
-import { getDrinks } from "./database.js"
-
-
->>>>>>> main
 
 document.addEventListener(
     "click",
