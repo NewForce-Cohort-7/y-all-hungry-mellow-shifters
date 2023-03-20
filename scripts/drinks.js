@@ -1,15 +1,21 @@
-import { getDrinks, setDrink } from "./database.js"
+import { getDrinks, setDrink, getSingleDrink } from "./database.js"
 
 const drinks = getDrinks()
+
+const printDrink = (drinkObject) => {
+   const drinkHTML = `<p> ${drinkObject.name}: ${drinkObject.price}</p>` 
+   document.querySelector(".createorder").innerHTML = drinkHTML
+}
 
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.id === "drinks") {
-            setDrink(parseInt(event.target.value))
-        
+        if (event.target.id === "drink") {
+            setDrink(parseInt(event.target.value)) 
+        const singleDrink = getSingleDrink(parseInt(event.target.value))
+        printDrink(singleDrink)
+        }
     }
-}
 )
 
 export const Drinks = () => {

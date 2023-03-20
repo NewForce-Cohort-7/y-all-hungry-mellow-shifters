@@ -74,6 +74,10 @@ export const setFood = (foodId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
+export const getSingleDrink = (id) => {
+    return database.drinks.find(currentDrink => currentDrink.id === id)
+}
+
 
 export const completeOrder = () => {
 
