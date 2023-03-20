@@ -29,13 +29,22 @@ const database = {
         {id:4, name: "Riverside Grille", address:"89 Riverside Way"}
     ]
 }
-
+//locations
 export const getLocations = () => {
     return database.locations.map(location => ({...location}))
 }
 
 export const setLocation = (locationId) => {
     database.transientState.selectedLocation = locationId
+    document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+//drinks
+export const getDrinks = () => {
+    return database.drinks.map(drink => ({...drink}))
+}
+
+export const setDrink = (drinkId) => {
+    database.transientState.selectedLocation = drinkId
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
