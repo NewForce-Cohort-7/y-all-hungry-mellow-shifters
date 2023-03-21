@@ -1,6 +1,8 @@
-import {getFoods, setFood, getSingleFood} from "./database.js"
+import {getFoods, setFood, getSingleFood, getFoodLocation, getCurrentLocation} from "./database.js"
 
 const foods = getFoods()
+const currentLocation = getCurrentLocation()
+const currentFood = getFoodLocation()
 
 const printFood = (foodObject) => {
     const foodHTML = `<p> ${foodObject.name}:$${foodObject.price}</p>` 
@@ -24,11 +26,12 @@ export const Foods = () => {
 
     html += '<select id="foods">'
     html += '<option value="0">Select food</option>'
+    if (currentLocation.locationId === currentFood.locationId) {
 
     for (const food of foods) {
         html += `<option value="${food.id}">${food.name}</option>`
     }
-
+}
     html += "</select>"
     return html
 
