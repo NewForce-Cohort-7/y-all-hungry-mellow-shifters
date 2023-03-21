@@ -33,28 +33,47 @@ const database = {
     ],
 
     foodLocation: [
-        {
-            id:1, 
-            foodId: ,
-            locationId: ,
-            quanity: 
-        }
+        { id: 1, foodId: 1, locationId: 1, quanity: 15 },
+        { id: 2, foodId: 2, locationId: 2, quanity: 10},
+        { id: 3, foodId: 3, locationId: 3, quanity: 20},
+        { id: 4, foodId: 4, locationId: 4, quanity: 10 },
+        { id: 5, foodId: 5, locationId: 1, quanity: 15 },
+        { id: 6, foodId: 1, locationId: 2, quanity: 20 },
+        { id: 7, foodId: 2, locationId: 3, quanity: 10},
+        { id: 8, foodId: 3, locationId: 4, quanity: 15 },
+        { id: 9, foodId: 4, locationId: 1, quanity: 20},
+        { id: 10, foodId: 5, locationId: 2, quanity: 10 },
+        { id: 11, foodId: 3, locationId: 3, quanity: 15 },
+        { id: 12, foodId: 4, locationId: 4, quanity: 10 },
     ],
     drinkLocation: [
-        {
-            id:1, 
-            drinkId: ,
-            locationId: ,
-            quanity: 
-        }
+        { id: 1, drinkId: 2, locationId: 2, quanity: 20 },
+        { id: 2, drinkId: 1, locationId: 1, quanity: 10},
+        { id: 3, drinkId: 4, locationId: 3, quanity: 20},
+        { id: 4, drinkId: 3, locationId: 4, quanity: 10 },
+        { id: 5, drinkId: 2, locationId: 4, quanity: 20 },
+        { id: 6, drinkId: 1, locationId: 3, quanity: 20 },
+        { id: 7, drinkId: 3, locationId: 2, quanity: 10},
+        { id: 8, drinkId: 4, locationId: 1, quanity: 20 },
+        { id: 9, drinkId: 1, locationId: 2, quanity: 20},
+        { id: 10, drinkId: 2, locationId: 1, quanity: 10 },
+        { id: 11, drinkId: 4, locationId: 4, quanity: 20},
+        { id: 12, drinkId: 3, locationId: 3, quanity: 10 },   
+        
     ],
     dessertLocation: [
-        {
-            id:1, 
-            dessertId: ,
-            locationId: ,
-            quanity: 
-        }
+        { id: 1, dessertId: 3, locationId: 3, quanity: 20 },
+        { id: 2, dessertId: 1, locationId: 4, quanity: 10},
+        { id: 3, dessertId: 2, locationId: 2, quanity: 20},
+        { id: 4, dessertId: 4, locationId: 1, quanity: 10 },
+        { id: 5, dessertId: 3, locationId: 3, quanity: 20 },
+        { id: 6, dessertId: 2, locationId: 4, quanity: 20 },
+        { id: 7, dessertId: 1, locationId: 1, quanity: 10},
+        { id: 8, dessertId: 3, locationId: 2, quanity: 20 },
+        { id: 9, dessertId: 4, locationId: 4, quanity: 20},
+        { id: 10, dessertId: 1, locationId: 3, quanity: 10 },
+        { id: 11, dessertId: 3, locationId: 2, quanity: 20},
+        { id: 12, dessertId: 2, locationId: 1, quanity: 10 },   
     ]
 
 }
