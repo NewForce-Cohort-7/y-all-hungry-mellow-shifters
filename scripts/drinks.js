@@ -3,8 +3,8 @@ import { getDrinks, setDrink, getSingleDrink } from "./database.js"
 const drinks = getDrinks()
 
 const printDrink = (drinkObject) => {
-   const drinkHTML = `<p> ${drinkObject.name}: ${drinkObject.price}</p>` 
-   document.querySelector(".createorder").innerHTML = drinkHTML
+   const drinkHTML = `<p> ${drinkObject.name}: $${drinkObject.price}</p>` 
+   document.querySelector("#drinkorder").innerHTML = drinkHTML
 }
 
 document.addEventListener(
