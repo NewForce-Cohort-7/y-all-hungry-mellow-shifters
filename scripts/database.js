@@ -55,6 +55,11 @@ export const setDrink = (drinkId) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
+export const getSingleDrink = (id) => {
+    return database.drinks.find(currentDrink => currentDrink.id === id)
+}
+
+//Desserts
 export const getDesserts = () => {
     return database.desserts.map(dessert => ({...dessert}))
 }
@@ -62,6 +67,10 @@ export const getDesserts = () => {
 export const setDesserts = (dessertId) => {
     database.transientState.selectedDessert = dessertId
     document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
+export const getSingleDessert = (id) => {
+    return database.desserts.find(currentDessert => currentDessert.id === id)
 }
 
 //foods
@@ -74,6 +83,9 @@ export const setFood = (foodId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
+export const getSingleFood = (id) => {
+    return database.foods.find(currentFood => currentFood.id === id)
+}
 
 export const completeOrder = () => {
 

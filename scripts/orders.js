@@ -1,26 +1,47 @@
-import { getDrinks, setDrink, getOrders } from "./database.js";
+import { getDrinks, getOrders, getDesserts, getFoods,} from "./database.js";
 
 const buildOrderListItem = (order) => {
-
+    
     const drinks = getDrinks()
-
+    const desserts = getDesserts()
+    const foods = getFoods()
 const foundDrinks = drinks.find(
     (drink) => {
         return drink.id === order.drinkId
     }
 )
 
+const foundFoods = foods.find(
+    (food) => {
+        return food.id === order.foodId
+    }
+)
+
+const foundDesserts = desserts.find(
+    (dessert) => {
+        return dessert.id === order.dessertId
+    }
+)
+
 // Running Subtotal
 
-const totalCost = foundDrinks.price
+const subTotal = (foundDrinks.price + foundDesserts.price + foundFoods.price)
+const totalCost = subTotal * (1 + 6/100)
 
-const costString = totalCost.toLocaleString("en-US", {
+const subString = subTotal.toLocaleString("en-US",{
+    style:"currency",
+    currency:"USD"
+})
+const costString = totalCost.toLocaleString("en-US",{
     style: "currency",
     currency: "USD"
 })
 
 return `<li>
-    Order #${order.id} cost ${costString}
+    Subtotal: ${subString}
+</li>
+<li>
+    Total: ${costString}
 </li>`
 }
 export const Orders = () => {
