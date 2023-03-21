@@ -37,6 +37,9 @@ export const yallHungry = () => {
     </section>
 
     <section class="createorder">
+    <div id="foodorder"></div>
+    <div id="drinkorder"></div>
+    <div id="dessertorder"></div>
     </section>
     <section class="food">
         ${Foods()}

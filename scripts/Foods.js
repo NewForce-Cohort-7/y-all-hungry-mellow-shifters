@@ -1,12 +1,20 @@
-import {getFoods, setFood} from "./database.js"
+import {getFoods, setFood, getSingleFood} from "./database.js"
 
 const foods = getFoods()
+
+const printFood = (foodObject) => {
+    const foodHTML = `<p> ${foodObject.name}:$${foodObject.price}</p>` 
+    document.querySelector("#foodorder").innerHTML = foodHTML
+ }
+ 
 
 document.addEventListener(
     "change",
     (changeEvent) => {
-        if (changeEvent.target.id === "food") {
+        if (changeEvent.target.id === "foods") {
             setFood(parseInt(changeEvent.target.value))
+            const singleFood = getSingleFood(parseInt(changeEvent.target.value))
+            printFood(singleFood)
         }
     }
 )
