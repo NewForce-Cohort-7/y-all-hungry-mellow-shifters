@@ -5,6 +5,7 @@ const buildOrderListItem = (order) => {
     const drinks = getDrinks()
     const desserts = getDesserts()
     const foods = getFoods()
+    
 const foundDrinks = drinks.find(
     (drink) => {
         return drink.id === order.drinkId
@@ -44,6 +45,7 @@ return `<li>
     Total: ${costString}
 </li>`
 }
+
 export const Orders = () => {
 
 const orders = getOrders()

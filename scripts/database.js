@@ -30,7 +30,33 @@ const database = {
     ],
     customOrder: [
         {id:1,locationId:1,drinkId:1,dessertId:1,foodId:1,timestamp:1614659931693}
+    ],
+
+    foodLocation: [
+        {
+            id:1, 
+            foodId: ,
+            locationId: ,
+            quanity: 
+        }
+    ],
+    drinkLocation: [
+        {
+            id:1, 
+            drinkId: ,
+            locationId: ,
+            quanity: 
+        }
+    ],
+    dessertLocation: [
+        {
+            id:1, 
+            dessertId: ,
+            locationId: ,
+            quanity: 
+        }
     ]
+
 }
 
 export const getOrders = () => {
@@ -41,6 +67,9 @@ export const getLocations = () => {
     return database.locations.map(location => ({...location}))
 }
 
+export const getCurrentLocation = () => {
+    return database.transientState.map(transientState => ({...transientState}))
+}
 export const setLocation = (locationId) => {
     database.transientState.selectedLocation = locationId
     document.dispatchEvent( new CustomEvent("stateChanged") )
@@ -85,6 +114,10 @@ export const setFood = (foodId) => {
 
 export const getSingleFood = (id) => {
     return database.foods.find(currentFood => currentFood.id === id)
+}
+
+export const getFoodLocation = () => {
+    return database.foodLocation.map(foodLocation => ({...foodLocation}))
 }
 
 export const completeOrder = () => {
