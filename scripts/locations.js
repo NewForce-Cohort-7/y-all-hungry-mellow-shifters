@@ -1,6 +1,7 @@
 import { getLocations, setLocation } from "./database.js"
 const locations = getLocations()
 
+
 document.addEventListener(
     "change",
     (changeEvent) => {
@@ -16,7 +17,7 @@ export const Locations = () => {
 
     html += '<select id="location">'
     html += '<option value="0">Select a Location</option>'
-
+  
     for (const location of locations) {
         html += `<option value="${location.id}">${location.name}</option>`
     }
