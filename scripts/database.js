@@ -30,7 +30,52 @@ const database = {
     ],
     customOrder: [
         {id:1,locationId:1,drinkId:1,dessertId:1,foodId:1,timestamp:1614659931693}
+    ],
+
+    foodLocation: [
+        { id: 1, foodId: 1, locationId: 1, quanity: 15 },
+        { id: 2, foodId: 2, locationId: 2, quanity: 10},
+        { id: 3, foodId: 3, locationId: 3, quanity: 20},
+        { id: 4, foodId: 4, locationId: 4, quanity: 10 },
+        { id: 5, foodId: 5, locationId: 1, quanity: 15 },
+        { id: 6, foodId: 1, locationId: 2, quanity: 20 },
+        { id: 7, foodId: 2, locationId: 3, quanity: 10},
+        { id: 8, foodId: 3, locationId: 4, quanity: 15 },
+        { id: 9, foodId: 4, locationId: 1, quanity: 20},
+        { id: 10, foodId: 5, locationId: 2, quanity: 10 },
+        { id: 11, foodId: 3, locationId: 3, quanity: 15 },
+        { id: 12, foodId: 4, locationId: 4, quanity: 10 },
+    ],
+    drinkLocation: [
+        { id: 1, drinkId: 2, locationId: 2, quanity: 20 },
+        { id: 2, drinkId: 1, locationId: 1, quanity: 10},
+        { id: 3, drinkId: 4, locationId: 3, quanity: 20},
+        { id: 4, drinkId: 3, locationId: 4, quanity: 10 },
+        { id: 5, drinkId: 2, locationId: 4, quanity: 20 },
+        { id: 6, drinkId: 1, locationId: 3, quanity: 20 },
+        { id: 7, drinkId: 3, locationId: 2, quanity: 10},
+        { id: 8, drinkId: 4, locationId: 1, quanity: 20 },
+        { id: 9, drinkId: 1, locationId: 2, quanity: 20},
+        { id: 10, drinkId: 2, locationId: 1, quanity: 10 },
+        { id: 11, drinkId: 4, locationId: 4, quanity: 20},
+        { id: 12, drinkId: 3, locationId: 3, quanity: 10 },   
+        
+    ],
+    dessertLocation: [
+        { id: 1, dessertId: 3, locationId: 3, quanity: 20 },
+        { id: 2, dessertId: 1, locationId: 4, quanity: 10},
+        { id: 3, dessertId: 2, locationId: 2, quanity: 20},
+        { id: 4, dessertId: 4, locationId: 1, quanity: 10 },
+        { id: 5, dessertId: 3, locationId: 3, quanity: 20 },
+        { id: 6, dessertId: 2, locationId: 4, quanity: 20 },
+        { id: 7, dessertId: 1, locationId: 1, quanity: 10},
+        { id: 8, dessertId: 3, locationId: 2, quanity: 20 },
+        { id: 9, dessertId: 4, locationId: 4, quanity: 20},
+        { id: 10, dessertId: 1, locationId: 3, quanity: 10 },
+        { id: 11, dessertId: 3, locationId: 2, quanity: 20},
+        { id: 12, dessertId: 2, locationId: 1, quanity: 10 },   
     ]
+
 }
 
 export const getOrders = () => {
@@ -41,6 +86,9 @@ export const getLocations = () => {
     return database.locations.map(location => ({...location}))
 }
 
+export const getCurrentLocation = () => {
+    return database.transientState.map(transientState => ({...transientState}))
+}
 export const setLocation = (locationId) => {
     database.transientState.selectedLocation = locationId
     document.dispatchEvent( new CustomEvent("stateChanged") )
@@ -55,6 +103,11 @@ export const setDrink = (drinkId) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
+export const getSingleDrink = (id) => {
+    return database.drinks.find(currentDrink => currentDrink.id === id)
+}
+
+//Desserts
 export const getDesserts = () => {
     return database.desserts.map(dessert => ({...dessert}))
 }
@@ -62,6 +115,10 @@ export const getDesserts = () => {
 export const setDesserts = (dessertId) => {
     database.transientState.selectedDessert = dessertId
     document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
+export const getSingleDessert = (id) => {
+    return database.desserts.find(currentDessert => currentDessert.id === id)
 }
 
 //foods
@@ -74,6 +131,13 @@ export const setFood = (foodId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
+export const getSingleFood = (id) => {
+    return database.foods.find(currentFood => currentFood.id === id)
+}
+
+export const getFoodLocation = () => {
+    return database.foodLocation.map(foodLocation => ({...foodLocation}))
+}
 
 export const completeOrder = () => {
 
