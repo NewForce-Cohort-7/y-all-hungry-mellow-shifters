@@ -5,7 +5,7 @@ import { completeOrder } from "./database.js"
 import { Desserts } from "./Desserts.js"
 import { Foods } from "./Foods.js"
 import { getDrinks } from "./database.js"
-import { Foods } from "./Foods.js"
+
 
 document.addEventListener(
     "click", (event) => {
