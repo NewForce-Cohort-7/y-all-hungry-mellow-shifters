@@ -23,22 +23,29 @@ const foundDesserts = desserts.find(
         return dessert.id === order.dessertId
     }
 )
+// const subTotalBuilder = () => {
+// const foundPrices =[]
+// foundPrices.push(foundDesserts.price, foundDrinks.price, foundFoods.price)
+// // let subTotal = 0
+// for (const price of foundPrices){
 
-// Running Subtotal
+// const subTotal = price += price
 
-const subTotal = (foundDrinks.price + foundDesserts.price + foundFoods.price)
-const totalCost = subTotal * (1 + 6/100)
+// console.log(subTotal)}}
 
-const subString = subTotal.toLocaleString("en-US",{
-    style:"currency",
-    currency:"USD"
-})
-const costString = totalCost.toLocaleString("en-US",{
-    style: "currency",
-    currency: "USD"
-})
+    const subTotal = (foundDrinks.price + foundDesserts.price + foundFoods.price)
+    const totalCost = subTotal * (1 + 6 / 100)
 
-return `<li>
+    const subString = subTotal.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD"
+    })
+    const costString = totalCost.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD"
+    })
+
+    return `<li>
     Subtotal: ${subString}
 </li>
 <li>
@@ -48,15 +55,15 @@ return `<li>
 
 export const Orders = () => {
 
-const orders = getOrders()
+    const orders = getOrders()
 
-let html = "<ul>"
+    let html = "<ul>"
 
-const listItems = orders.map(buildOrderListItem)
+    const listItems = orders.map(buildOrderListItem)
 
-html += listItems.join("")
-html += "</ul>"
+    html += listItems.join("")
+    html += "</ul>"
 
-return html
+    return html
 }
 

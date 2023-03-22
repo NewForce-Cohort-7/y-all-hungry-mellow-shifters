@@ -14,16 +14,6 @@ document.addEventListener(
     }
 )
 
-// document.addEventListener(
-//     "click", (event) => {
-//     const itemClicked =event.target
-//     if (itemClicked.class.startsWith("button")){
-
-//         // Call the function responsible for generating order here
-//         }
-//     }
-// )
-
 
 export const yallHungry = () => {
     return `
