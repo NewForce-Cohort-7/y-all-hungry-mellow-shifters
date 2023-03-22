@@ -56,23 +56,42 @@ return html
 
 }*/
 
+// export const drinkOrder = () => {
+//     let html = "<h2>Select Your Drink</h2>"
+
+//     html += '<select id="drink">'
+//     html += '<option value="0">Select Drink</option>'
+        
+//     const drinksAvailable = drinks.map ( drinks => { 
+//         for ( const drinkobj of drinkLocations) { 
+//             if (orders.locationId === drinkobj.locationId) {
+             
+//                 return `<option value="${drinks.id}">${drinks.name}</option>`
+//             }
+//         } 
+//     }   )   
+
+// html += drinksAvailable.join("")
+// html += '</select>'
+// return html     
+// }
+
+
 export const drinkOrder = () => {
     let html = "<h2>Select Your Drink</h2>"
 
     html += '<select id="drink">'
     html += '<option value="0">Select Drink</option>'
         
-    const drinksAvailable = drinks.map ( drinks => { 
-        for ( const drinkobj of drinkLocations) { 
-            if (orders.locationId === drinkobj.locationId) {
-                if (drinks.id === drinkobj.drinkId)
-                return `<option value="${drinks.id}">${drinks.name}</option>`
-            }
-        } 
+    const drinksAvailable = drinks.map ( currentDrink => { 
+                for(let drinkLocation of drinkLocations){
+                    if(currentDrink.id === drinkLocation.drinkId){
+                        return `<option value="${currentDrink.id}">${currentDrink.name}</option>`
+                    }
+                }
     }   )   
 
 html += drinksAvailable.join("")
 html += '</select>'
 return html     
 }
-
