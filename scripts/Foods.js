@@ -12,11 +12,11 @@ const printFood = (foodObject) => {
 
 document.addEventListener(
     "change",
-    (changeEvent) => {
-        if (changeEvent.target.id === "foods") {
-            setFood(parseInt(changeEvent.target.value))
-            const singleFood = getSingleFood(parseInt(changeEvent.target.value))
-            printFood(singleFood)
+    (event) => {
+        if (event.target.id === "foods") {
+            setFood(parseInt(event.target.value))
+            const singleFood = getSingleFood(parseInt(event.target.value))
+            printFood(singleFood) 
         }
     }
 )
@@ -42,8 +42,10 @@ document.addEventListener(
 
 export const foodOrder = () => {
     let html = "<h2>Food</h2>"
-    html += '<select id="food">'
+
+    html += '<select id="foods">'
     html += '<option value="0">Select Food</option>'
+
     const foodsAvailable = foods.map ( currentFood => {
                 for(let foodLocation of foodLocations){
                     if(currentFood.id === foodLocation.foodId){
@@ -51,6 +53,7 @@ export const foodOrder = () => {
                     }
                 }
     }   )
+
 html += foodsAvailable.join("")
 html += '</select>'
 return html
