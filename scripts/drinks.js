@@ -6,7 +6,7 @@ const drinkLocations = getDrinkLocation()
 const orders = getOrders()
 
 const printDrink = (drinkObject) => {
-   const drinkHTML = `<p> ${drinkObject.name}: $${drinkObject.price}</p>` 
+   const drinkHTML = `<img src=${drinkObject.image}/> <p> ${drinkObject.name}: $${drinkObject.price}</p>` 
    document.querySelector("#drinkorder").innerHTML = drinkHTML
 }
 

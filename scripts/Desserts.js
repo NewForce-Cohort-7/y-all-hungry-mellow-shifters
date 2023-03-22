@@ -3,7 +3,7 @@ import { getDesserts, setDesserts, getSingleDessert} from "./database.js"
 const desserts = getDesserts()
 
 const printDessert = (dessertObject) => {
-    const dessertHTML = `<p> ${dessertObject.name}: $${dessertObject.price}</p>` 
+    const dessertHTML = `<img src=${dessertObject.image}/> <p> ${dessertObject.name}: $${dessertObject.price}</p>` 
     document.querySelector("#dessertorder").innerHTML = dessertHTML
  }
 
