@@ -22,8 +22,6 @@ document.addEventListener(
 )
 
 //track drink stock
-l
-
 
 export const drinkOrder = () => {
     let html = "<h2>Select Your Drink</h2>"
@@ -31,13 +29,12 @@ export const drinkOrder = () => {
     html += '<select id="drink">'
     html += '<option value="0">Select Drink</option>'
         
-    const drinksAvailable = drinks.map ( currentDrink => { 
+    const drinksAvailable = drinks.map ( currentDrink =>  {
                 for(let drinkLocation of drinkLocations){
-                    if(currentDrink.id === drinkLocation.drinkId){
-                    let drinkStock = drinkLocation.quanity - 1 }
-                    {
-                        return `<option value="${currentDrink.id}">${currentDrink.name}: ${drinkStock}}</option>`
-                    }
+                    if(currentDrink.id === drinkLocation.drinkId)
+           
+                        return `<option value="${currentDrink.id}">${currentDrink.name}: ${drinkLocation.quanity}</option>`
+                    
                 }
     }   )   
 
