@@ -36,10 +36,6 @@ export const yallHungry = () => {
         ${Locations()}
     </section>
 
-    <section class="createorder">
-    <div id="foodorder"></div>
-    <div id="drinkorder"></div>
-    <div id="dessertorder"></div>
     </section>
     <section class="food">
         ${Foods()}
@@ -52,6 +48,12 @@ export const yallHungry = () => {
         ${Desserts()}
 
     </section>
+    <section class="yourorder">YOUR ORDER</section>
+    <div id="foodorder"></div>
+    <div id="drinkorder"></div>
+    
+    <div id="dessertorder"></div>
+
     <section class="ordertotal">
         ${Orders()}
       </section>

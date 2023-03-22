@@ -9,11 +9,11 @@ const database = {
         {id: 5, name: "Fried Raccoon", image: "img", price: 5.00}
         ],
     drinks: [
-        { id: 1, name: "Dr. Pepper", image: "img", price: 0.99 },
-        { id: 2, name: "Mt. Dew", image: "img", price: 0.99}, 
-        { id: 3, name: "Coke", image: "img", price: 0.99}, 
-        { id: 4, name: "Coffee", image: "img", price: 1.99}, 
-        { id: 5, name: "Tea", image: "img", price: 0.99}
+        { id: 1, name: "Dr. Pepper", image: "images/drinks/Drpepper.png", price: 0.99 },
+        { id: 2, name: "Mt. Dew", image: "images/drinks/mtdew.png", price: 0.99}, 
+        { id: 3, name: "Coke", image: "images/drinks/coke.png", price: 0.99}, 
+        { id: 4, name: "Coffee", image: "images/drinks/coffee.jpg", price: 1.99}, 
+        { id: 5, name: "Tea", image: "images/drinks/tea.jpg", price: 0.99}
         ],
     desserts: [
         { id: 1, name: "Ice Cream", pic: "img", price: 2.99},
