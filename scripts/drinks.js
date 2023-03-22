@@ -1,9 +1,10 @@
-import { getDrinks, setDrink, getSingleDrink, getCurrentLocation, getOrders, getDrinkLocation } from "./database.js"
+import { getDrinks, setDrink, getSingleDrink, getCurrentLocation, getOrders, getDrinkLocation} from "./database.js"
 
 const drinks = getDrinks()
 const currentLocation = getCurrentLocation()
 const drinkLocations = getDrinkLocation()
 const orders = getOrders()
+
 
 const printDrink = (drinkObject) => {
    const drinkHTML = `<p> ${drinkObject.name}: $${drinkObject.price}</p>` 
@@ -31,7 +32,7 @@ export const drinkOrder = () => {
         
     const drinksAvailable = drinks.map ( currentDrink =>  {
                 for(let drinkLocation of drinkLocations){
-                    if(currentDrink.id === drinkLocation.drinkId)
+                    if(currentDrink.id === drinkLocation.drinkId && chosenLocation.locationId === drinkLocation.locationId)
            
                         return `<option value="${currentDrink.id}">${currentDrink.name}: ${drinkLocation.quanity}</option>`
                     
