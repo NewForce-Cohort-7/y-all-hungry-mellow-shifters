@@ -3,7 +3,7 @@ import { drinkOrder } from "./drinks.js"
 import { Orders } from "./orders.js"
 import { completeOrder } from "./database.js"
 import { Desserts } from "./Desserts.js"
-import { Foods } from "./Foods.js"
+import { foodOrder } from "./Foods.js"
 
 document.addEventListener(
     "click", (event) => {
@@ -42,7 +42,7 @@ export const yallHungry = () => {
     <div id="dessertorder"></div>
     </section>
     <section class="food">
-        ${Foods()}
+        ${foodOrder()}
       
     </section>
     <section class="drink">

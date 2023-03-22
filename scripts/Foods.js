@@ -2,7 +2,7 @@ import {getFoods, setFood, getSingleFood, getFoodLocation, getCurrentLocation} f
 
 const foods = getFoods()
 const currentLocation = getCurrentLocation()
-const currentFood = getFoodLocation()
+const foodLocations = getFoodLocation()
 
 const printFood = (foodObject) => {
     const foodHTML = `<p> ${foodObject.name}:$${foodObject.price}</p>` 
@@ -21,18 +21,37 @@ document.addEventListener(
     }
 )
 
-export const Foods = () => {
+// export const foodOrder = () => {
+//     let html = "<h2>Food</h2>"
+
+//     html += '<select id="foods">'
+//     html += '<option value="0">Select food</option>'
+//     const foodAviable = foods.map (currentFood => {
+//         for (let foodLocation of foodLocations){
+//             if (currentFood.id === foodLocation.foodId){
+//                 return `<option value="${currentFood.id}">${currentFood.name}</option>`
+//             }
+//         }
+//     })
+//     html += foodAviable.join("")
+//     html += "</select>"
+//     return html
+
+// }
+
+
+export const foodOrder = () => {
     let html = "<h2>Food</h2>"
-
-    html += '<select id="foods">'
-    html += '<option value="0">Select food</option>'
-    if (currentLocation.locationId === currentFood.locationId) {
-      const foodsAviable =[] 
-        for (const food of foods) {
-        html += `<option value="${food.id}">${food.name}</option>`
-    }
-}
-    html += "</select>"
-    return html
-
+    html += '<select id="food">'
+    html += '<option value="0">Select Food</option>'
+    const foodsAvailable = foods.map ( currentFood => {
+                for(let foodLocation of foodLocations){
+                    if(currentFood.id === foodLocation.foodId){
+                        return `<option value="${currentFood.id}">${currentFood.name}</option>`
+                    }
+                }
+    }   )
+html += foodsAvailable.join("")
+html += '</select>'
+return html
 }
