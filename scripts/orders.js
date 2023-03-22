@@ -33,21 +33,21 @@ const foundDesserts = desserts.find(
 
 // console.log(subTotal)}}
 
-    const subTotal = (foundDrinks.price + foundDesserts.price + foundFoods.price)
-    const totalCost = subTotal * (1 + 6 / 100)
+    // const subTotal = (foundDrinks.price + foundDesserts.price + foundFoods.price)
+    const totalCost = foundDrinks.price + foundDesserts.price + foundFoods.price
 
-    const subString = subTotal.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD"
-    })
+    // const subString = subTotal.toLocaleString("en-US", {
+    //     style: "currency",
+    //     currency: "USD"
+    // })
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",
         currency: "USD"
     })
-
-    return `<li>
-    Subtotal: ${subString}
-</li>
+// {/* <li>
+//     Subtotal: ${subString}
+// </li> */}
+    return `
 <li>
     Total: ${costString}
 </li>`

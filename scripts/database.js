@@ -29,7 +29,7 @@ const database = {
         {id:4, name: "Riverside Grille", address:"89 Riverside Way"}
     ],
     customOrder: [
-        {id:1,locationId:1,drinkId:1,dessertId:1,foodId:1,timestamp:1614659931693}
+        {id:1,locationId:3,drinkId:2,dessertId:3,foodId:2,timestamp:1614659931693}
     ],
 
     foodLocation: [
@@ -147,10 +147,10 @@ export const completeOrder = () => {
     const newOrder = {...database.transientState}
     const lastIndex = database.customOrder.length - 1
     newOrder.id = database.customOrder[lastIndex].id + 1
-    newOrder.timestamp=Date.now()
+    newOrder.timestamp = Date.now()
     database.customOrder.push(newOrder)
-    database.transientState ={}
-        document.dispatchEvent( new CustomEvent("stateChanged") )
+    database.transientState = {}
+        document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
 
