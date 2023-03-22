@@ -20,7 +20,7 @@ back
       .container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(6, 1fr);
         grid-column-gap: 2px;
         grid-row-gap: 2px;
         }
@@ -46,9 +46,29 @@ back
       grid-column: 4;
       grid-row: 4;
     }
+    .yourorder {
+        grid-column: 3;
+        grid-row: 2;
+    }
+    #foodorder {
+        grid-column: 3;
+        grid-row: 3;
+    }
+
+    #drinkorder{
+        grid-column: 3;
+        grid-row: 4;
+
+    }
+
+    #dessertorder {
+        grid-column: 3;
+        grid-row: 5;
+
+    }
     .ordertotal {
         grid-column: 3; 
-        grid-row: 5;
+        grid-row: 6;
     }
     #button {
         grid-column: 4; 
