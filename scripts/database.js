@@ -49,16 +49,16 @@ const database = {
     drinkLocation: [
         { id: 1, drinkId: 2, locationId: 2, quanity: 20 },
         { id: 2, drinkId: 1, locationId: 1, quanity: 10},
-        { id: 3, drinkId: 4, locationId: 3, quanity: 20},
-        { id: 4, drinkId: 3, locationId: 4, quanity: 10 },
+        { id: 3, drinkId: 2, locationId: 3, quanity: 20},
+        { id: 4, drinkId: 1, locationId: 4, quanity: 10 },
         { id: 5, drinkId: 2, locationId: 4, quanity: 20 },
         { id: 6, drinkId: 1, locationId: 3, quanity: 20 },
-        { id: 7, drinkId: 3, locationId: 2, quanity: 10},
-        { id: 8, drinkId: 4, locationId: 1, quanity: 20 },
-        { id: 9, drinkId: 1, locationId: 2, quanity: 20},
+        { id: 7, drinkId: 2, locationId: 2, quanity: 10},
+        { id: 8, drinkId: 1, locationId: 1, quanity: 20 },
+        { id: 9, drinkId: 2, locationId: 2, quanity: 20},
         { id: 10, drinkId: 2, locationId: 1, quanity: 10 },
-        { id: 11, drinkId: 4, locationId: 4, quanity: 20},
-        { id: 12, drinkId: 3, locationId: 3, quanity: 10 },   
+        { id: 11, drinkId: 1, locationId: 4, quanity: 20},
+        { id: 12, drinkId: 2, locationId: 3, quanity: 10 },   
         
     ],
     dessertLocation: [
@@ -87,7 +87,7 @@ export const getLocations = () => {
 }
 
 export const getCurrentLocation = () => {
-    return database.transientState.map(transientState => ({...transientState}))
+    return ({...database.transientState})
 }
 export const setLocation = (locationId) => {
     database.transientState.selectedLocation = locationId
@@ -96,6 +96,9 @@ export const setLocation = (locationId) => {
 //drinks
 export const getDrinks = () => {
     return database.drinks.map(drink => ({...drink}))
+}
+export const getDrinkLocation = () => {
+    return database.drinkLocation.map(drinkLocation => ({...drinkLocation}))
 }
 
 export const setDrink = (drinkId) => {
