@@ -1,5 +1,5 @@
 import { Locations } from "./locations.js"
-import { Drinks } from "./drinks.js"
+import { drinkOrder } from "./drinks.js"
 import { Orders } from "./orders.js"
 import { completeOrder } from "./database.js"
 import { Desserts } from "./Desserts.js"
@@ -46,7 +46,7 @@ export const yallHungry = () => {
       
     </section>
     <section class="drink">
-        ${Drinks()}
+        ${drinkOrder()}
     </section>
     <section class="dessert">
         ${Desserts()}
