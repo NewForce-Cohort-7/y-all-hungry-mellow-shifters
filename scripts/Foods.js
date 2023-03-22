@@ -27,8 +27,8 @@ export const Foods = () => {
     html += '<select id="foods">'
     html += '<option value="0">Select food</option>'
     if (currentLocation.locationId === currentFood.locationId) {
-
-    for (const food of foods) {
+      const foodsAviable =[] 
+        for (const food of foods) {
         html += `<option value="${food.id}">${food.name}</option>`
     }
 }

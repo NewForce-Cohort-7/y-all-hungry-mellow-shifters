@@ -87,7 +87,7 @@ export const getLocations = () => {
 }
 
 export const getCurrentLocation = () => {
-    return database.transientState.map(transientState => ({...transientState}))
+    return ({...database.transientState})
 }
 export const setLocation = (locationId) => {
     database.transientState.selectedLocation = locationId
