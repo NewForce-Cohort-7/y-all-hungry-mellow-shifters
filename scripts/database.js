@@ -54,7 +54,7 @@ const database = {
         { id: 5, drinkId: 2, locationId: 4, quanity: 20 },
         { id: 6, drinkId: 1, locationId: 3, quanity: 20 },
         { id: 7, drinkId: 2, locationId: 2, quanity: 10},
-        { id: 8, drinkId: 1, locationId: 1, quanity: 20 },
+        { id: 8, drinkId: 3, locationId: 1, quanity: 20 },
         { id: 9, drinkId: 2, locationId: 2, quanity: 20},
         { id: 10, drinkId: 2, locationId: 1, quanity: 10 },
         { id: 11, drinkId: 1, locationId: 4, quanity: 20},
