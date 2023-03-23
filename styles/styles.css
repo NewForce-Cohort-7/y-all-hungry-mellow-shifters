@@ -1,10 +1,14 @@
 /* createorder divs: #foodorder, #drinkorder, #dessertorder */
-
+*{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
 body {
     margin: 40px;
     background-color: aliceblue;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("/images/hotdogs.jpg");
+    background-size: 25%;
+    background-repeat: round;
 }
   
 back
@@ -29,6 +33,11 @@ back
           grid-column: 1 / 4;
           grid-row: 1;
       }
+
+    #location {
+            height: 20px;
+        }
+      
       .createorder{
           grid-column: 4 ;
           grid-row: 1 / 5;
@@ -43,29 +52,44 @@ back
           grid-row: 3;
       }
      .dessert {
-      grid-column: 4;
-      grid-row: 4;
+        grid-column: 4;
+        grid-row: 4;
     }
     .yourorder {
-        grid-column: 3;
+        grid-column: 2 / 3;
         grid-row: 2;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 30px;
+        text-shadow:  1px 1px 2px #e00606c7
     }
     #foodorder {
-        grid-column: 3;
+        grid-column: 2 / 3;
         grid-row: 3;
+        border: thick solid #e00606c7;
+        margin-top: 8px;
     }
 
     #drinkorder{
-        grid-column: 3;
+        grid-column: 2 / 3;
         grid-row: 4;
-
+        border: thick solid #e00606c7;
+        margin-top: 8px;
     }
 
     #dessertorder {
-        grid-column: 3;
+        grid-column: 2 / 3;
         grid-row: 5;
+        border: thick solid #e00606c7;
+        margin-top: 8px;;
 
     }
+    #foodorder, #drinkorder, #dessertorder {
+        padding-top: 20px;
+        display: flex;
+        background-color: aliceblue;
+    }
+
     .ordertotal {
         grid-column: 3; 
         grid-row: 6;
@@ -84,6 +108,7 @@ back
         margin: auto;
         transition-duration: 0.4s;
         border-radius: 8px;
+        padding: 20px;
     }
     #button:hover {background-color: #3e8e41}
 
@@ -91,4 +116,23 @@ back
       background-color: #3e8e41;
       box-shadow: 0 5px #666;
       transform: translateY(4px);
+    }
+
+    #foods, #drinks, #desserts {
+        width: 150px;
+    }
+    
+    img {
+        width: 100px;
+        height: 100px;
+        padding-bottom: 10px;
+    }
+
+    h1, h2, h3 {
+        text-shadow:  1px 1px 2px #e00606c7
+    }
+
+    select {
+        background-color: #444;
+        color: aliceblue;
     }
