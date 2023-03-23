@@ -33,12 +33,12 @@ const database = {
     ],
 
     foodLocation: [
-        { id: 1, foodId: 1, locationId: 1, quanity: 15 },
+        { id: 1, foodId: 2, locationId: 1, quanity: 15 },
         { id: 2, foodId: 2, locationId: 2, quanity: 10},
         { id: 3, foodId: 3, locationId: 3, quanity: 20},
         { id: 4, foodId: 4, locationId: 4, quanity: 10 },
         { id: 5, foodId: 5, locationId: 1, quanity: 15 },
-        { id: 6, foodId: 1, locationId: 2, quanity: 20 },
+        { id: 6, foodId: 1, locationId: 1, quanity: 20 },
         { id: 7, foodId: 2, locationId: 3, quanity: 10},
         { id: 8, foodId: 3, locationId: 4, quanity: 15 },
         { id: 9, foodId: 4, locationId: 1, quanity: 20},
@@ -99,9 +99,6 @@ export const setLocation = (locationId) => {
 export const getDrinks = () => {
     return database.drinks.map(drink => ({...drink}))
 }
-export const getDrinkLocation = () => {
-    return database.drinkLocation.map(drinkLocation => ({...drinkLocation}))
-}
 
 export const setDrink = (drinkId) => {
     database.transientState.selectedLocation = drinkId
@@ -143,6 +140,11 @@ export const getSingleFood = (id) => {
 export const getFoodLocation = () => {
     return database.foodLocation.map(foodLocation => ({...foodLocation}))
 }
+
+export const getDrinkLocation = () => {
+    return database.drinkLocation.map(drinkLocation => ({...drinkLocation}))
+}
+
 
 export const completeOrder = () => {
 
