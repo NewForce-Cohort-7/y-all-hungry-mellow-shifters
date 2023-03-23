@@ -1,9 +1,9 @@
-import { getDesserts, getOrders, setDesserts, getDessertLocation, getSingleDessert, getCurrentLocation} from "./database.js"
+import { getDesserts, getOrders, setDesserts, getDessertLocation, getSingleDessert, getLocation} from "./database.js"
 
 const desserts = getDesserts()
 const dessertLocations = getDessertLocation()
 const orders = getOrders()
-const currentLocation = getCurrentLocation()
+
 
 const printDessert = (dessertObject) => {
     const dessertHTML = `<p> ${dessertObject.name}: $${dessertObject.price}</p>` 
@@ -21,7 +21,7 @@ document.addEventListener(
     }
 )
 
-
+export const currentLocation = getLocation()
 export const Desserts = () => {
     let html = "<h2>Select Your Dessert</h2>"
 
