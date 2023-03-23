@@ -41,14 +41,16 @@ document.addEventListener(
 
 
 export const foodOrder = () => {
+    
+    const currentLocation = getCurrentLocation()
     let html = "<h2>Food</h2>"
 
     html += '<select id="foods">'
-    html += '<option value="0">Select Food</option>'
+    html += '<option value="0">Select food</option>'
 
     const foodsAvailable = foods.map ( currentFood => {
                 for(let foodLocation of foodLocations){
-                    if(currentFood.id === foodLocation.foodId){
+                    if(currentFood.id === foodLocation.foodId && currentLocation.selectedLocation === foodLocation.locationId){
                         return `<option value="${currentFood.id}">${currentFood.name} ${foodLocation.quanity}</option>`
                     }
                 }
@@ -57,4 +59,4 @@ export const foodOrder = () => {
 html += foodsAvailable.join("")
 html += '</select>'
 return html
-}
+    }
