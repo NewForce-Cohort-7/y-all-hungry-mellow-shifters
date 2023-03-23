@@ -14,16 +14,6 @@ document.addEventListener(
     }
 )
 
-// document.addEventListener(
-//     "click", (event) => {
-//     const itemClicked =event.target
-//     if (itemClicked.class.startsWith("button")){
-
-//         // Call the function responsible for generating order here
-//         }
-//     }
-// )
-
 
 export const yallHungry = () => {
     return `
@@ -49,15 +39,12 @@ export const yallHungry = () => {
 
     </section>
     <section class="yourorder">YOUR ORDER</section>
-    <div id="foodorder"></div>
-    <div id="drinkorder"></div>
-    
-    <div id="dessertorder"></div>
-
+        <div id="foodorder"></div>
+        <div id="drinkorder"></div>
+        <div id="dessertorder"></div>
+    </section>
     <section class="ordertotal">
         ${Orders()}
-      </section>
-   
     <button id="button">Place Your Order</button>
 
 </article>

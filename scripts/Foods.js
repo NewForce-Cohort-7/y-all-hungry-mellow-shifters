@@ -5,7 +5,7 @@ const currentLocation = getCurrentLocation()
 const foodLocations = getFoodLocation()
 
 const printFood = (foodObject) => {
-    const foodHTML = `<p> ${foodObject.name}:$${foodObject.price}</p>` 
+    const foodHTML = `<img src=${foodObject.image}/> <p> ${foodObject.name}:$${foodObject.price}</p>` 
     document.querySelector("#foodorder").innerHTML = foodHTML
  }
  
