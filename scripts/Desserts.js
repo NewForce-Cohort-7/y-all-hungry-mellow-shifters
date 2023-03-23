@@ -1,4 +1,4 @@
-import { getDesserts, getOrders, setDesserts, getDessertLocation, getSingleDessert, getLocation} from "./database.js"
+import { getDesserts, getOrders, setDesserts, getDessertLocation, getSingleDessert, getCurrentLocation} from "./database.js"
 
 const desserts = getDesserts()
 const dessertLocations = getDessertLocation()
@@ -21,8 +21,9 @@ document.addEventListener(
     }
 )
 
-export const currentLocation = getLocation()
+
 export const Desserts = () => {
+    const currentLocation = getCurrentLocation()
     let html = "<h2>Select Your Dessert</h2>"
 
     html += '<select id="desserts">'
@@ -31,7 +32,7 @@ export const Desserts = () => {
         
     const dessertsAvailable = desserts.map ( currentDessert => { 
                 for(let dessertLocation of dessertLocations){
-                    if(currentDessert.id === dessertLocation.dessertId){
+                    if(currentDessert.id === dessertLocation.dessertId && currentLocation.selectedLocation === dessertLocation.locationId){
         
                          
     return `<option value="${currentDessert.id}">${currentDessert.name}</option>`
