@@ -2,11 +2,11 @@ const database = {
     transientState: {},
 
     foods: [ 
-        {id: 1, name: "Hot Dog", image: "img", price: 1.00},
-        {id: 2, name: "Pepperoni Roll", image: "img", price: 1.00},
-        {id: 3, name: "Fried chicken", image: "img", price: 3.50}, 
-        {id: 4, name: "Opossum Pie", image: "img", price: 5.00},
-        {id: 5, name: "Fried Raccoon", image: "img", price: 5.00}
+        {id: 1, name: "Hot Dog", image: "images/Foods/HotDog.jpg", price: 1.00},
+        {id: 2, name: "Pepperoni Roll", image: "images/Foods/PepperoniRoll.jpeg", price: 1.00},
+        {id: 3, name: "Fried chicken", image: "images/Foods/FriedChicken.jpg", price: 3.50}, 
+        {id: 4, name: "Opossum Pie", image: "images/Foods/OpossumPotPie.jpg", price: 5.00},
+        {id: 5, name: "Fried Raccoon", image: "images/Foods/FriedRaccoon.jpg", price: 5.00}
         ],
     drinks: [
         { id: 1, name: "Dr. Pepper", image: "images/drinks/Drpepper.png", price: 0.99 },
@@ -16,11 +16,11 @@ const database = {
         { id: 5, name: "Tea", image: "images/drinks/tea.jpg", price: 0.99}
         ],
     desserts: [
-        { id: 1, name: "Ice Cream", pic: "img", price: 2.99},
-        { id: 2, name: "Apple Pie", pic: "img", price: 6.99},
-        { id: 3, name: "Toe Nails", pic: "img", price: 15.99},
-        { id: 4, name: "Hot Fudge Sundae", pic:"img", price: 3.99},
-        { id: 5, name: "Triple Decker Ice Cream Root Beer Float Explosion", pic: "img", price: 78.99}
+        { id: 1, name: "Ice Cream", image: "images/Desserts/Ice_cream_with_whipped_cream,_chocolate_syrup,_and_a_wafer_(cropped).jpg", price: 2.99},
+        { id: 2, name: "Apple Pie", image: "images/Desserts/pie.jpeg", price: 6.99},
+        { id: 3, name: "Toe Nails", image: "images/Desserts/Toenail_clippings.JPG", price: 15.99},
+        { id: 4, name: "Hot Fudge Sundae", image:"images/Desserts/hotfudgesundae.jpg", price: 3.99},
+        { id: 5, name: "Triple Decker Ice Cream Root Beer Float Explosion", image: "images/Desserts/rootbeerfloat.jpg", price: 78.99}
         ],
     locations: [
         {id:1, name: "Dogs-R-Us", address: "26 Main St." }, 
@@ -29,7 +29,7 @@ const database = {
         {id:4, name: "Riverside Grille", address:"89 Riverside Way"}
     ],
     customOrder: [
-        {id:1,locationId:1,drinkId:1,dessertId:1,foodId:1,timestamp:1614659931693}
+        {id:1,locationId:3,drinkId:2,dessertId:3,foodId:2,timestamp:1614659931693}
     ],
 
     foodLocation: [
@@ -147,10 +147,10 @@ export const completeOrder = () => {
     const newOrder = {...database.transientState}
     const lastIndex = database.customOrder.length - 1
     newOrder.id = database.customOrder[lastIndex].id + 1
-    newOrder.timestamp=Date.now()
+    newOrder.timestamp = Date.now()
     database.customOrder.push(newOrder)
-    database.transientState ={}
-        document.dispatchEvent( new CustomEvent("stateChanged") )
+    database.transientState = {}
+        document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
 
