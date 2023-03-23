@@ -49,7 +49,7 @@ export const foodOrder = () => {
     const foodsAvailable = foods.map ( currentFood => {
                 for(let foodLocation of foodLocations){
                     if(currentFood.id === foodLocation.foodId){
-                        return `<option value="${currentFood.id}">${currentFood.name}</option>`
+                        return `<option value="${currentFood.id}">${currentFood.name} ${foodLocation.quanity}</option>`
                     }
                 }
     }   )
