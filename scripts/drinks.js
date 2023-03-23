@@ -1,9 +1,10 @@
-import { getDrinks, setDrink, getSingleDrink, getCurrentLocation, getOrders, getDrinkLocation } from "./database.js"
+import { getDrinks, setDrink, getSingleDrink, getCurrentLocation, getOrders, getDrinkLocation, getFoodLocation } from "./database.js"
 
 const drinks = getDrinks()
 const currentLocation = getCurrentLocation()
 const drinkLocations = getDrinkLocation()
 const orders = getOrders()
+const foodLocation = getFoodLocation()
 
 const printDrink = (drinkObject) => {
    const drinkHTML = `<p> ${drinkObject.name}: $${drinkObject.price}</p>` 
