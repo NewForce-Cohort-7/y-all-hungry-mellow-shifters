@@ -62,18 +62,18 @@ const database = {
         
     ],
     dessertLocation: [
-        { id: 1, dessertId: 3, locationId: 3, quanity: 20 },
-        { id: 2, dessertId: 1, locationId: 4, quanity: 10},
-        { id: 3, dessertId: 2, locationId: 2, quanity: 20},
-        { id: 4, dessertId: 4, locationId: 1, quanity: 10 },
-        { id: 5, dessertId: 3, locationId: 3, quanity: 20 },
-        { id: 6, dessertId: 2, locationId: 4, quanity: 20 },
-        { id: 7, dessertId: 1, locationId: 1, quanity: 10},
-        { id: 8, dessertId: 3, locationId: 2, quanity: 20 },
-        { id: 9, dessertId: 4, locationId: 4, quanity: 20},
-        { id: 10, dessertId: 1, locationId: 3, quanity: 10 },
-        { id: 11, dessertId: 3, locationId: 2, quanity: 20},
-        { id: 12, dessertId: 2, locationId: 1, quanity: 10 },   
+        { id: 1, dessertId: 1, locationId: 3, quanity: 20 },
+        { id: 2, dessertId: 5, locationId: 4, quanity: 10},
+        { id: 3, dessertId: 5, locationId: 2, quanity: 20},
+        { id: 4, dessertId: 5, locationId: 1, quanity: 10 },
+        { id: 5, dessertId: 5, locationId: 3, quanity: 20 },
+        { id: 6, dessertId: 5, locationId: 4, quanity: 20 },
+        { id: 7, dessertId: 5, locationId: 1, quanity: 10},
+        { id: 8, dessertId: 5, locationId: 2, quanity: 20 },
+        { id: 9, dessertId: 5, locationId: 4, quanity: 20},
+        { id: 10, dessertId: 5, locationId: 3, quanity: 10 },
+        { id: 11, dessertId: 5, locationId: 2, quanity: 20},
+        { id: 12, dessertId: 5, locationId: 1, quanity: 10 },   
     ]
 
 }
@@ -122,6 +122,9 @@ export const setDesserts = (dessertId) => {
 export const getSingleDessert = (id) => {
     return database.desserts.find(currentDessert => currentDessert.id === id)
 }
+
+export const getDessertLocation = () => {
+    return database.dessertLocation.map(dessertLocation => ({...dessertLocation}))}
 
 //foods
 export const getFoods = () => {
