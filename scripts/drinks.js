@@ -1,7 +1,7 @@
 import { getDrinks, setDrink, getSingleDrink, getCurrentLocation, getOrders, getDrinkLocation} from "./database.js"
 
 const drinks = getDrinks()
-const currentLocation = getCurrentLocation()
+
 const drinkLocations = getDrinkLocation()
 const orders = getOrders()
 
@@ -25,6 +25,7 @@ document.addEventListener(
 //track drink stock
 
 export const drinkOrder = () => {
+    const currentLocation = getCurrentLocation()
     let html = "<h2>Select Your Drink</h2>"
 
     html += '<select id="drink">'
@@ -32,7 +33,7 @@ export const drinkOrder = () => {
         
     const drinksAvailable = drinks.map ( currentDrink =>  {
                 for(let drinkLocation of drinkLocations){
-                    if(currentDrink.id === drinkLocation.drinkId && chosenLocation.locationId === drinkLocation.locationId)
+                    if(currentDrink.id === drinkLocation.drinkId && currentLocation.selectedLocation === drinkLocation.locationId)
            
                         return `<option value="${currentDrink.id}">${currentDrink.name}: ${drinkLocation.quanity}</option>`
                     

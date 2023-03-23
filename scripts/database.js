@@ -87,8 +87,10 @@ export const getLocations = () => {
 }
 
 export const getCurrentLocation = () => {
-    return ({...database.transientState})
+    return database.transientState
 }
+
+
 export const setLocation = (locationId) => {
     database.transientState.selectedLocation = locationId
     document.dispatchEvent( new CustomEvent("stateChanged") )
